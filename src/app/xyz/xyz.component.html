@@ -1,13 +1,50 @@
 
 <header>
   <div class="container">
-    <a routerLink="/" class="logo">apptitle</a>
+    <div class="d-flex">
+      <div>
+        <a routerLink="/" class="logo">apptitle</a>
+      </div>
+      <div>
+
     <nav>
       <ul class="text-center">
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/about">About</a></li>
         <li><a routerLink="/service">service</a></li>
+        <li><a routerLink="/contact">contact</a></li>
       </ul>
     </nav>
+      </div>
+    </div>
   </div>
+
 </header>
+<div class="container">
+     <!-- Data catch form Controller(.ts file) -->
+     <div> Months :
+      <select (change) = "changemonths($event)">
+         <option *ngFor = "let i of months">{{i}}</option>
+      </select>
+   </div>
+   <div>
+    <span *ngIf = "isavailable">Condition is valid.</span>
+    //over here based on if condition the text condition is valid is displayed.
+    //If the value of isavailable is set to false it will not display the text.
+  </div>
+  <div>
+    <span *ngIf = "isavailable; then condition1 else condition2">
+       Condition is valid.
+    </span>
+    <ng-template #condition1>Condition is valid</ng-template>
+    <ng-template #condition2>Condition is invalid</ng-template>
+ </div>
+  <div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2 bd-highlight">Flex item 1</div>
+    <div class="p-2 bd-highlight">Flex item 2</div>
+    <div class="p-2 bd-highlight">Flex item 3</div>
+  </div>
+  <button (click) = "myClickFunction($event)">
+    Click Me
+ </button>
+</div>
